@@ -17,7 +17,7 @@ add_executable(vector_test)
 add_executable(collections::vector_test ALIAS vector_test)
 
 # Target sources
-target_sources(cpp_vector
+target_sources(vector_test
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/vector_test.cpp
 )
