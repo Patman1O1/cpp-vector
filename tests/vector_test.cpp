@@ -3,8 +3,8 @@
 #include <gmock/gmock.h>
 
 // Local Includes
-#include <collections/cpp_vector.hpp>
+#include <collections/vector.hpp>
 
-namespace cpp_vector_testing {
+namespace collections::vector_testing {
 
-} // namespace cpp_vector_testing
+} // namespace collections::vector_testing
