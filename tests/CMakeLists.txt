@@ -5,30 +5,30 @@ include(GoogleTest)
 enable_testing()
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_vector_test
-# Alias: collections::cpp_vector_test
+# Target: vector_test
+# Alias: collections::vector_test
 # Type: Executable
-# Dependencies: GTest::gtest_main, GTest::gmock_main, collections::cpp_vector_headers
+# Dependencies: GTest::gtest_main, GTest::gmock_main, collections::vector_headers
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_executable(cpp_vector_test)
+add_executable(vector_test)
 
 # Target alias
-add_executable(collections::cpp_vector_test ALIAS cpp_vector_test)
+add_executable(collections::vector_test ALIAS vector_test)
 
 # Target sources
-target_sources(cpp_vector_test
+target_sources(cpp_vector
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/cpp_vector_test.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/vector_test.cpp
 )
 
 # Target dependencies
-target_link_libraries(cpp_vector_test
+target_link_libraries(vector_test
     PRIVATE
-        collections::cpp_vector_headers
+        collections::vector_headers
         GTest::gtest_main
         GTest::gmock_main
 )
 
 # Test discovery
-gtest_discover_tests(cpp_vector_test)
+gtest_discover_tests(vector_test)
