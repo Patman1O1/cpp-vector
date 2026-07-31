@@ -2,7 +2,7 @@
 # Information
 #-----------------------------------------------------------------------------------------------------------------------
 cmake_minimum_required(VERSION 4.3.0)
-project("cpp_vector"
+project("vector"
         VERSION 0.1.0
         DESCRIPTION ""
         LANGUAGES CXX
@@ -61,44 +61,44 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_vector_headers
-# Alias: collections::cpp_vector_headers
+# Target: vector_headers
+# Alias: collections::vector_headers
 # Type: Interface Library
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cpp_vector_headers INTERFACE)
+add_library(vector_headers INTERFACE)
 
 # Target alias
-add_library(collections::cpp_vector_headers ALIAS cpp_vector_headers)
+add_library(collections::vector_headers ALIAS vector_headers)
 
 # Target headers
-target_include_directories(cpp_vector_headers
+target_include_directories(vector_headers
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_vector
-# Alias: collections::cpp_vector
+# Target: vector
+# Alias: collections::vector
 # Type: Interface Library
-# Dependencies: collections::cpp_vector_headers
+# Dependencies: collections::vector_headers
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cpp_vector INTERFACE)
+add_library(vector INTERFACE)
 
 # Target alias
-add_library(collections::cpp_vector ALIAS cpp_vector)
+add_library(collections::vector ALIAS vector)
 
 # Target dependencies
-target_link_libraries(cpp_vector
+target_link_libraries(vector
     INTERFACE
-        collections::cpp_vector_headers
+        collections::vector_headers
 )
 
 # Target properties
-set_target_properties(cpp_vector PROPERTIES
-        OUTPUT_NAME cpp_vector
+set_target_properties(vector PROPERTIES
+        OUTPUT_NAME vector
         VERSION ${PROJECT_VERSION}
         SOVERSION ${PROJECT_VERSION_MAJOR}
         CXX_VISIBILITY_PRESET hidden
@@ -107,11 +107,11 @@ set_target_properties(cpp_vector PROPERTIES
 
 if(NOT CMAKE_SKIP_INSTALL_RULES)
     # Install cpp_vector
-    install(TARGETS cpp_vector
-            RUNTIME COMPONENT cpp_vector
-            LIBRARY COMPONENT cpp_vector
-            NAMELINK_COMPONENT cpp_vector
-            ARCHIVE COMPONENT cpp_vector
+    install(TARGETS vector
+            RUNTIME COMPONENT vector
+            LIBRARY COMPONENT vector
+            NAMELINK_COMPONENT vector
+            ARCHIVE COMPONENT vector
             INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 endif()
 
