@@ -1,5 +1,5 @@
-#ifndef COLLECTIONS_ARRAY_HPP
-#define COLLECTIONS_ARRAY_HPP
+#ifndef COLLECTIONS_VECTOR_HPP
+#define COLLECTIONS_VECTOR_HPP
 
 // ISO C Includes
 #include <cstddef>
@@ -940,4 +940,4 @@ namespace collections {
         throw std::runtime_error("Not implemented");
     }
 } // namespace collections
-#endif // #ifndef VECTOR_HPP
+#endif // #ifndef COLLECTIONS_VECTOR_HPP
